@@ -1,28 +1,28 @@
-<h2> Object Detection </h2>
+<h1> Object Detection </h1>
 
-<h3>1. Using an Image Classifier(pretrained) to detect objects using keras and openCV </h3>
+<h2>1. Using an Image Classifier(pretrained) to detect objects using keras and openCV </h2>
 
 Here we take a Convolutional Neural Network trained for image classification (pre-trained RESNET-50) and utilize `image pyramids`, `sliding windows`, and `non-maxima suppression` to build a basic object detector.Basically we combine traditional computer vision object detection algorithms with deep learning.
 
 
-<h4> In Image Classification :</h4> Input : Image --> Output : Class Label  <br>We present the input image to our neural network, and we obtain a single class label and a probability associated with the class label prediction.This class label characterizes the contents ( the most dominant and  visible contents) of the image.<br>
+<h3> In Image Classification :</h3> Input : Image --> Output : Class Label  <br>We present the input image to our neural network, and we obtain a single class label and a probability associated with the class label prediction.This class label characterizes the contents ( the most dominant and  visible contents) of the image.<br>
 
-<h4> Object Detection :</h4> Along with outputting the class labels i.e the objects present in the image, it also outputs where in the image the objects are with multiple bounding box coordinates.<br>
-
+<h3> Object Detection :</h3> Along with outputting the class labels i.e the objects present in the image, it also outputs where in the image the objects are with multiple bounding box coordinates.<br>
+<br>
 More specifically, it outputs 3 values,including : <br>
 1. A list of bounding boxes, or the (x, y)-coordinates for each object in an image
 2. The class label associated with each of the bounding boxes
 3. The probability/confidence score associated with each bounding box and class label
 
 
-<h4> How deep learning image classifier can be converted into an object detector? </h4>
+<h3> How deep learning image classifier can be converted into an object detector? </h3>
 We utilise the elements of traditional computer vision algorithms to convert our CNN image classifier into an object detector.<br>
 
 The first element we use is <b>`Image Pyramids`</b>: <br>
 
 * An “image pyramid” is a multi-scale representation of an image:
 
-<img src="Image_pyramid.png" style ="height: 40%;width: 40%;"/>
+<img src="Image_pyramid.png" style ="height: 30%;width: 30%;"/>
 
 At the bottom of the pyramid, we have the original sized image .
 At each subsequent layer, the image is resized and optionally smoothed.
@@ -43,7 +43,8 @@ At each stop of the window we would:
 
 <div style ="color:green">Image pyramids and sliding windows helps us localize objects at different locations and multiple scales of the input image
 
-
+<br>
+<br>
 
 
 The Third element we use is <b>`Non-Maxima Suppression`</b>: <br>
